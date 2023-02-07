@@ -7,16 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Booking
 {
-    public partial class MasterPage : System.Web.UI.MasterPage
+    public partial class BookNow : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void redirectToBookNow(object sender, EventArgs e)
-        {
-            Response.Redirect("BookNow.aspx");
         }
     }
 }

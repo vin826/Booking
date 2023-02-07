@@ -11,6 +11,12 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:HyperLink ID="HyperLink1" runat="server">South Country Garden</asp:HyperLink>
+                <asp:HyperLink ID="Booking" runat="server" NavigateUrl="~/BookNow.aspx">Book Now</asp:HyperLink>
+                <asp:HyperLink ID="HyperLink2" runat="server">Call Now</asp:HyperLink>
+                <asp:HyperLink ID="HyperLink3" runat="server">Get Directions</asp:HyperLink>
+        </div>
+        <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
