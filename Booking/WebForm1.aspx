@@ -49,18 +49,21 @@
                     <td class="auto-style13">Full Name:</td>
                     <td class="auto-style14">
                         <asp:TextBox ID="Tname" runat="server" Width="232px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Enrollee Name is required. ( * )" ControlToValidate="Tname" Font-Italic="True" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style11">Phone Number:</td>
                     <td class="auto-style12">
                         <asp:TextBox ID="Tnum" runat="server" Width="196px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Enrollee Name is required. ( * )" ControlToValidate="Tnum" Font-Italic="True" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style9">Email Address:</td>
                     <td class="auto-style10">
                         <asp:TextBox ID="Temail" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Email Adress is required. ( * )" ControlToValidate="Temail" Font-Italic="True" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -70,6 +73,7 @@
                              <SelectedDayStyle BackColor="Blue" >
                         </SelectedDayStyle>
                         </asp:Calendar>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Calendar is required. ( * )" ControlToValidate="Calendar1" Font-Italic="True" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
              
