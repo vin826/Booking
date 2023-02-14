@@ -11,106 +11,133 @@ namespace Booking
 {
 
 
-    public partial class BookNow
+    public partial class AdminPage
     {
 
         /// <summary>
-        /// nameTxt control.
+        /// loginTbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nameTxt;
+        protected global::System.Web.UI.WebControls.Table loginTbl;
 
         /// <summary>
-        /// nameRequiredField control.
+        /// userLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator nameRequiredField;
+        protected global::System.Web.UI.WebControls.Label userLbl;
 
         /// <summary>
-        /// numTxt control.
+        /// userTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox numTxt;
+        protected global::System.Web.UI.WebControls.TextBox userTxt;
 
         /// <summary>
-        /// nameRequiredField0 control.
+        /// userRequiredField control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator nameRequiredField0;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator userRequiredField;
 
         /// <summary>
-        /// numValidate control.
+        /// userValidate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label numValidate;
+        protected global::System.Web.UI.WebControls.Label userValidate;
 
         /// <summary>
-        /// emailTxt control.
+        /// passLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox emailTxt;
+        protected global::System.Web.UI.WebControls.Label passLbl;
 
         /// <summary>
-        /// nameRequiredField1 control.
+        /// passTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator nameRequiredField1;
+        protected global::System.Web.UI.WebControls.TextBox passTxt;
 
         /// <summary>
-        /// emailValidate control.
+        /// passRequiredField control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label emailValidate;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator passRequiredField;
 
         /// <summary>
-        /// Label1 control.
+        /// passValidate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label passValidate;
 
         /// <summary>
-        /// bookingDate control.
+        /// loginBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar bookingDate;
+        protected global::System.Web.UI.WebControls.Button loginBtn;
 
         /// <summary>
-        /// bookingBtn control.
+        /// controlTbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bookingBtn;
+        protected global::System.Web.UI.WebControls.Table controlTbl;
+
+        /// <summary>
+        /// addBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button addBtn;
+
+        /// <summary>
+        /// Button2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
+
+        /// <summary>
+        /// Button3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button3;
     }
 }

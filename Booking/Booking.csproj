@@ -96,6 +96,7 @@
     <Content Include="Home.aspx" />
     <Content Include="BookNow.aspx" />
     <Content Include="TestingPage.aspx" />
+    <Content Include="AdminPage.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MasterPage.Master.cs">
@@ -133,6 +134,13 @@
     </Compile>
     <Compile Include="TestingPage.aspx.designer.cs">
       <DependentUpon>TestingPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage.aspx.cs">
+      <DependentUpon>AdminPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage.aspx.designer.cs">
+      <DependentUpon>AdminPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
