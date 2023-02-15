@@ -47,7 +47,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style11">Phone Number:</td>
+                    <td class="auto-style11">Contact Number:</td>
                     <td class="auto-style12">
                         <asp:TextBox ID="numTxt" runat="server" Width="196px"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="nameRequiredField0" runat="server" ControlToValidate="numTxt" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -64,7 +64,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style8">
-                        <asp:Label ID="Label1" runat="server" Text="Date to be booked:"></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Text="Booking Date:"></asp:Label>
                     </td>
                     <td>
                         <asp:Calendar ID="bookingDate" runat="server">
