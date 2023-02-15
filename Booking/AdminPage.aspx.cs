@@ -18,8 +18,6 @@ namespace Booking
         protected void Page_Load(object sender, EventArgs e)
         {
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
-            loginTbl.Visible = false;
-            controlTbl.Visible = true;
         }
 
         protected void loginBtn_Click(object sender, EventArgs e)
