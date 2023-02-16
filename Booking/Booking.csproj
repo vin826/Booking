@@ -204,7 +204,6 @@
     <Content Include="WebForm1.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="BookNow.aspx" />
-    <Content Include="TestingPage.aspx" />
     <Content Include="AdminPage.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -236,13 +235,6 @@
     </Compile>
     <Compile Include="BookNow.aspx.designer.cs">
       <DependentUpon>BookNow.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="TestingPage.aspx.cs">
-      <DependentUpon>TestingPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TestingPage.aspx.designer.cs">
-      <DependentUpon>TestingPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPage.aspx.cs">
       <DependentUpon>AdminPage.aspx</DependentUpon>
