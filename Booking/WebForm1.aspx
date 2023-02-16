@@ -1,12 +1,15 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="Booking.WebForm1" %>
+﻿<%@Page Title=""  Language="C#" MasterPageFile="~/MasterPage.Master"  AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="Booking.WebForm1" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
     
     
-    <title></title>
+    
+    
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style type="text/css">
         .auto-style6 {
             height: 78px;
@@ -40,9 +43,6 @@
             height: 26px;
         }
     </style>
-</head>
-<body style="margin-bottom: 15px">
-    <form id="form1" runat="server">
         <div class="auto-style6">
             Personal Info Input<table class="auto-style7">
                 <tr>
@@ -73,7 +73,6 @@
                              <SelectedDayStyle BackColor="Blue" >
                         </SelectedDayStyle>
                         </asp:Calendar>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Calendar is required. ( * )" ControlToValidate="Calendar1" Font-Italic="True" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
              
@@ -82,6 +81,6 @@
 
             </table>
         </div>
-    </form>
-</body>
-</html>
+  
+</asp:Content>
+
