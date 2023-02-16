@@ -203,7 +203,7 @@
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
     <Content Include="Home.aspx" />
-    <Content Include="BookNow.aspx" />
+    <Content Include="BookingPage.aspx" />
     <Content Include="AdminPage.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -229,12 +229,12 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="BookNow.aspx.cs">
-      <DependentUpon>BookNow.aspx</DependentUpon>
+    <Compile Include="BookingPage.aspx.cs">
+      <DependentUpon>BookingPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="BookNow.aspx.designer.cs">
-      <DependentUpon>BookNow.aspx</DependentUpon>
+    <Compile Include="BookingPage.aspx.designer.cs">
+      <DependentUpon>BookingPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPage.aspx.cs">
       <DependentUpon>AdminPage.aspx</DependentUpon>

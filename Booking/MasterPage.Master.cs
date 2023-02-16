@@ -14,9 +14,9 @@ namespace Booking
 
         }
 
-        protected void redirectToBookNow(object sender, EventArgs e)
+        protected void redirectToBookingPage(object sender, EventArgs e)
         {
-            Response.Redirect("BookNow.aspx");
+            Response.Redirect("BookingPage.aspx");
         }
     }
 }

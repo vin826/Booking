@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="BookNow.aspx.cs" Inherits="Booking.BookNow" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="BookingPage.aspx.cs" Inherits="Booking.BookingPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title></title>
     <style type="text/css">
@@ -69,8 +69,26 @@
                     <td>
                         <asp:Calendar ID="bookingDate" runat="server">
                              <SelectedDayStyle BackColor="Blue" >
-                        </SelectedDayStyle>
+                            </SelectedDayStyle>
                         </asp:Calendar>
+                        <asp:Label ID="dateValidate" runat="server" ForeColor="Red" Visible="False"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="headCountLbl" runat="server" Text="Estimated Number of People:"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="headCountTxt" runat="server" TextMode="Number" OnTextChanged="headCountTxt_TextChanged"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="headCountRequiredField" runat="server" ControlToValidate="headCountTxt" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="preQuoteLbl" runat="server" Text="Estimated Cost:"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="preQuoteTxt" runat="server" TextMode="Number" Enabled="False"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -78,9 +96,11 @@
                     </td>
                     <td>
                         <asp:Button ID="bookingBtn" runat="server" Text="Book" OnClick="bookingBtn_Click" />
+                        <asp:Label ID="bookingConfirm" runat="server" Text="Booking Confirmed!" ForeColor="Green" Visible="False"></asp:Label>
                     </td>
                 </tr>
             </table>
+            By proceeding with the booking process, you are agreeing to receive an email (I don't know how to word this)
         </div>
 </div>
 </asp:Content>

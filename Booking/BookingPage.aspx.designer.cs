@@ -11,7 +11,7 @@ namespace Booking
 {
 
 
-    public partial class BookNow
+    public partial class BookingPage
     {
 
         /// <summary>
@@ -105,6 +105,60 @@ namespace Booking
         protected global::System.Web.UI.WebControls.Calendar bookingDate;
 
         /// <summary>
+        /// dateValidate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label dateValidate;
+
+        /// <summary>
+        /// headCountLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label headCountLbl;
+
+        /// <summary>
+        /// headCountTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox headCountTxt;
+
+        /// <summary>
+        /// headCountRequiredField control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator headCountRequiredField;
+
+        /// <summary>
+        /// preQuoteLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label preQuoteLbl;
+
+        /// <summary>
+        /// preQuoteTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox preQuoteTxt;
+
+        /// <summary>
         /// bookingBtn control.
         /// </summary>
         /// <remarks>
@@ -112,5 +166,14 @@ namespace Booking
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button bookingBtn;
+
+        /// <summary>
+        /// bookingConfirm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label bookingConfirm;
     }
 }
