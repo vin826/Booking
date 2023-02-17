@@ -45,5 +45,10 @@ namespace Booking
             emailValidate.Visible = true;
             return false;
         }
+
+        protected void bookingDate_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

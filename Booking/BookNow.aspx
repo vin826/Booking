@@ -67,7 +67,7 @@
                         <asp:Label ID="Label1" runat="server" Text="Date to be booked:"></asp:Label>
                     </td>
                     <td>
-                        <asp:Calendar ID="bookingDate" runat="server">
+                        <asp:Calendar ID="bookingDate" runat="server" OnSelectionChanged="bookingDate_SelectionChanged">
                              <SelectedDayStyle BackColor="Blue" >
                         </SelectedDayStyle>
                         </asp:Calendar>
