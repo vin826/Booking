@@ -100,7 +100,8 @@
                     </td>
                 </tr>
             </table>
-            By proceeding with the booking process, you are agreeing to receive an email (I don't know how to word this)
+            By proceeding with the booking process, you are consent to receiving an email.<br />
+            Please check your spam folder if you do not see the email.
         </div>
 </div>
 </asp:Content>
