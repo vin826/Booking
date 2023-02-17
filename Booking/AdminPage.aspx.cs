@@ -242,11 +242,20 @@ namespace Booking
                 existingID[i] = Int32.Parse(data.Rows[i]["bookingID"].ToString());
             }
 
-            if (existingID.Contains(Int32.Parse(deleteTxt.Text)))
+            try
             {
-                deleteValidate.Visible = false;
-                return true;
+                if (existingID.Contains(Int32.Parse(deleteTxt.Text)))
+                {
+                    deleteValidate.Visible = false;
+                    return true;
+                }
             }
+            catch
+            {
+                deleteValidate.Visible = true;
+                return false;
+            }
+            
             deleteValidate.Visible = true;
             return false;
         }
