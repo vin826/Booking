@@ -113,4 +113,7 @@
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>
+    <br />
+    <br />
+    Please fill out the form to rate the website after finishing this page and the admin page. Thank you.
     </asp:Content>
