@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.OleDb;
+using System.Data.Sql;
 using System.Configuration;
 using System.Linq;
 using System.Text;
@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
+using System.Data.SqlClient;
 
 namespace Booking
 {
@@ -57,12 +58,12 @@ namespace Booking
             deleteTbl.Visible = false;
 
             data.Clear();
-            string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Server.MapPath("~/App_Data/BookingDB.accdb");
-            OleDbConnection bookingConnect = new OleDbConnection(connectString);
+            string connectString = "Server=tcp:myscgserver.database.windows.net,1433;Initial Catalog=bookingDB;Persist Security Info=False;User ID=Mugbearer;Password=Southcountry1234;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            SqlConnection bookingConnect = new SqlConnection(connectString);
             bookingConnect.Open();
             string cmdStr = "SELECT * FROM bookingTBL;";
-            OleDbCommand bookingCmd = new OleDbCommand(cmdStr, bookingConnect);
-            OleDbDataReader bookingDR = bookingCmd.ExecuteReader();
+            SqlCommand bookingCmd = new SqlCommand(cmdStr, bookingConnect);
+            SqlDataReader bookingDR = bookingCmd.ExecuteReader();
             data.Load(bookingDR);
 
             StringBuilder tblOne = new StringBuilder();
@@ -109,13 +110,12 @@ namespace Booking
         {
             if (IsValidNum() && IsValidEmail() && IsValidDate())
             {
-                string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Server.MapPath("~/App_Data/BookingDB.accdb");
-                OleDbConnection bookingConnect = new OleDbConnection(connectString);
+                string connectString = "Server=tcp:myscgserver.database.windows.net,1433;Initial Catalog=bookingDB;Persist Security Info=False;User ID=Mugbearer;Password=Southcountry1234;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"; SqlConnection bookingConnect = new SqlConnection(connectString);
                 bookingConnect.Open();
                 data.Clear();
                 string cmdStr = "SELECT * FROM bookingTBL;";
-                OleDbCommand bookingCmd = new OleDbCommand(cmdStr, bookingConnect);
-                OleDbDataReader bookingDR = bookingCmd.ExecuteReader();
+                SqlCommand bookingCmd = new SqlCommand(cmdStr, bookingConnect);
+                SqlDataReader bookingDR = bookingCmd.ExecuteReader();
                 data.Load(bookingDR);
 
                 Random rnd = new Random();
@@ -135,8 +135,8 @@ namespace Booking
                     break;
                 }
 
-                cmdStr = $"INSERT INTO `bookingTBL`(`bookingID`,`fullName`, `contactNum`, `email`, `date`) VALUES ({randomID.ToString()},'{nameTxt.Text}','{numTxt.Text}','{emailTxt.Text}','{dateCal.SelectedDate.ToShortDateString()}');";
-                bookingCmd = new OleDbCommand(cmdStr, bookingConnect);
+                cmdStr = $"INSERT INTO bookingTBL (bookingID, fullName, contactNum, email, date) VALUES ({randomID.ToString()},'{nameTxt.Text}','{numTxt.Text}','{emailTxt.Text}','{dateCal.SelectedDate.ToShortDateString()}');";
+                bookingCmd = new SqlCommand(cmdStr, bookingConnect);
                 bookingCmd.ExecuteNonQuery();
 
                 bookConfirm.Visible = true;
@@ -152,11 +152,10 @@ namespace Booking
         {
             if (IsValidID())
             {
-                string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Server.MapPath("~/App_Data/BookingDB.accdb");
-                OleDbConnection bookingConnect = new OleDbConnection(connectString);
+                string connectString = "Server=tcp:myscgserver.database.windows.net,1433;Initial Catalog=bookingDB;Persist Security Info=False;User ID=Mugbearer;Password=Southcountry1234;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"; SqlConnection bookingConnect = new SqlConnection(connectString);
                 bookingConnect.Open();
-                string cmdStr = $"DELETE FROM `bookingTBL` WHERE `bookingID` = {deleteTxt.Text};";
-                OleDbCommand bookingCmd = new OleDbCommand(cmdStr, bookingConnect);
+                string cmdStr = $"DELETE FROM bookingTBL WHERE bookingID = {deleteTxt.Text};";
+                SqlCommand bookingCmd = new SqlCommand(cmdStr, bookingConnect);
                 bookingCmd.ExecuteNonQuery();
                 deleteConfirm.Visible = true;
                 bookingConnect.Close();
@@ -193,13 +192,12 @@ namespace Booking
 
         protected bool IsValidDate()
         {
-            string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Server.MapPath("~/App_Data/BookingDB.accdb");
-            OleDbConnection bookingConnect = new OleDbConnection(connectString);
+            string connectString = "Server=tcp:myscgserver.database.windows.net,1433;Initial Catalog=bookingDB;Persist Security Info=False;User ID=Mugbearer;Password=Southcountry1234;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"; SqlConnection bookingConnect = new SqlConnection(connectString);
             bookingConnect.Open();
             data.Clear();
             string cmdStr = "SELECT * FROM bookingTBL;";
-            OleDbCommand bookingCmd = new OleDbCommand(cmdStr, bookingConnect);
-            OleDbDataReader bookingDR = bookingCmd.ExecuteReader();
+            SqlCommand bookingCmd = new SqlCommand(cmdStr, bookingConnect);
+            SqlDataReader bookingDR = bookingCmd.ExecuteReader();
             data.Load(bookingDR);
             bookingConnect.Close();
 
@@ -233,13 +231,12 @@ namespace Booking
 
         protected bool IsValidID()
         {
-            string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Server.MapPath("~/App_Data/BookingDB.accdb");
-            OleDbConnection bookingConnect = new OleDbConnection(connectString);
+            string connectString = "Server=tcp:myscgserver.database.windows.net,1433;Initial Catalog=bookingDB;Persist Security Info=False;User ID=Mugbearer;Password=Southcountry1234;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"; SqlConnection bookingConnect = new SqlConnection(connectString);
             bookingConnect.Open();
             data.Clear();
             string cmdStr = "SELECT * FROM bookingTBL;";
-            OleDbCommand bookingCmd = new OleDbCommand(cmdStr, bookingConnect);
-            OleDbDataReader bookingDR = bookingCmd.ExecuteReader();
+            SqlCommand bookingCmd = new SqlCommand(cmdStr, bookingConnect);
+            SqlDataReader bookingDR = bookingCmd.ExecuteReader();
             data.Load(bookingDR);
 
             int[] existingID = new int[data.Rows.Count];
