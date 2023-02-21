@@ -1,7 +1,7 @@
-﻿using MySqlConnector;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.OleDb;
 using System.Linq;
 using System.Net.Mail;
 using System.Web;
@@ -12,7 +12,6 @@ namespace Booking
 {
     public partial class BookingPage : System.Web.UI.Page
     {
-        string connectString = "server=sql12.freesqldatabase.com;user=sql12597390;database=sql12597390;password=4GJ2JL9HDl;";
         DataTable data = new DataTable();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -24,12 +23,13 @@ namespace Booking
         {
             if (IsValidNum() && IsValidEmail() && IsValidDate())
             {
-                MySqlConnection bookingConnect = new MySqlConnection(connectString);
+                string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Server.MapPath("~/App_Data/BookingDB.accdb");
+                OleDbConnection bookingConnect = new OleDbConnection(connectString);
                 bookingConnect.Open();
                 data.Clear();
                 string cmdStr = "SELECT * FROM bookingTBL;";
-                MySqlCommand bookingCmd = new MySqlCommand(cmdStr, bookingConnect);
-                MySqlDataReader bookingDR = bookingCmd.ExecuteReader();
+                OleDbCommand bookingCmd = new OleDbCommand(cmdStr, bookingConnect);
+                OleDbDataReader bookingDR = bookingCmd.ExecuteReader();
                 data.Load(bookingDR);
 
                 Random rnd = new Random();
@@ -50,7 +50,7 @@ namespace Booking
                 }
 
                 cmdStr = $"INSERT INTO `bookingTBL`(`bookingID`,`fullName`, `contactNum`, `email`, `date`) VALUES ({randomID.ToString()},'{nameTxt.Text}','{numTxt.Text}','{emailTxt.Text}','{bookingDate.SelectedDate.ToShortDateString()}');";
-                bookingCmd = new MySqlCommand(cmdStr, bookingConnect);
+                bookingCmd = new OleDbCommand(cmdStr, bookingConnect);
                 bookingCmd.ExecuteNonQuery();
 
                 bookingConfirm.Visible = true;
@@ -118,12 +118,13 @@ namespace Booking
 
         protected bool IsValidDate()
         {
-            MySqlConnection bookingConnect = new MySqlConnection(connectString);
+            string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Server.MapPath("~/App_Data/BookingDB.accdb");
+            OleDbConnection bookingConnect = new OleDbConnection(connectString);
             bookingConnect.Open();
             data.Clear();
             string cmdStr = "SELECT * FROM bookingTBL;";
-            MySqlCommand bookingCmd = new MySqlCommand(cmdStr, bookingConnect);
-            MySqlDataReader bookingDR = bookingCmd.ExecuteReader();
+            OleDbCommand bookingCmd = new OleDbCommand(cmdStr, bookingConnect);
+            OleDbDataReader bookingDR = bookingCmd.ExecuteReader();
             data.Load(bookingDR);
             bookingConnect.Close();
 

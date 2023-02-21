@@ -115,5 +115,7 @@
     </asp:Table>
     <br />
     <br />
-    Please fill out the form to rate the website after finishing this page and the admin page. Thank you.
+    Please fill out the form to rate the website after finishing this page and the booking page. Thank you.<br />
+    Username: username<br />
+    Password: password 
     </asp:Content>
