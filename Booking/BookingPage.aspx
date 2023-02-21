@@ -100,7 +100,7 @@
                     </td>
                 </tr>
             </table>
-            By proceeding with the booking process, you are consent to receiving an email.<br />
+            By proceeding with the booking process, you are consenting to receiving an email.<br />
             Please check your spam folder if you do not see the email.<br />
             <br />
             Please fill out the google form to rate the website after finishing this page and the admin page. Thank you.</div>
