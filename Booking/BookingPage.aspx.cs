@@ -56,35 +56,39 @@ namespace Booking
                 bookingConfirm.Visible = true;
                 bookingConnect.Close();
 
-                MailMessage clientMail = new MailMessage();
-                SmtpClient clientOne = new SmtpClient("smtp.office365.com");
-                clientMail.From = new MailAddress("kris.p.bacon2023@outlook.com", "Kris P. Bacon");
-                clientMail.To.Add(emailTxt.Text);
+                try
+                {
+                    MailMessage clientMail = new MailMessage();
+                    SmtpClient clientOne = new SmtpClient("smtp.office365.com");
+                    clientMail.From = new MailAddress("kris.p.bacon2023@outlook.com", "Kris P. Bacon");
+                    clientMail.To.Add(emailTxt.Text);
 
-                clientMail.Subject = "Preliminary Quote";
-                clientMail.IsBodyHtml = true;
-                clientMail.Body = $"Greetings {nameTxt.Text}!" +
-                    $"<br><br>Thank you for booking South Country Garden. Your estimated cost is ₱{preQuoteTxt.Text}.";
-                clientOne.EnableSsl = true;
-                clientOne.Port = 587;
-                clientOne.Credentials = new System.Net.NetworkCredential("kris.p.bacon2023@outlook.com", "SamplePassword123");
-                clientOne.Send(clientMail);
+                    clientMail.Subject = "Preliminary Quote";
+                    clientMail.IsBodyHtml = true;
+                    clientMail.Body = $"Greetings {nameTxt.Text}!" +
+                        $"<br><br>Thank you for booking South Country Garden. Your estimated cost is ₱{preQuoteTxt.Text}.";
+                    clientOne.EnableSsl = true;
+                    clientOne.Port = 587;
+                    clientOne.Credentials = new System.Net.NetworkCredential("kris.p.bacon2023@outlook.com", "SamplePassword123");
+                    clientOne.Send(clientMail);
 
-                MailMessage scgMail = new MailMessage();
-                SmtpClient clientTwo = new SmtpClient("smtp.office365.com");
-                scgMail.From = new MailAddress("kris.p.bacon2023@outlook.com", "Kris P. Bacon");
-                scgMail.To.Add("kris.p.bacon2023@outlook.com");
+                    MailMessage scgMail = new MailMessage();
+                    SmtpClient clientTwo = new SmtpClient("smtp.office365.com");
+                    scgMail.From = new MailAddress("kris.p.bacon2023@outlook.com", "Kris P. Bacon");
+                    scgMail.To.Add("kris.p.bacon2023@outlook.com");
 
-                scgMail.Subject = "New Client Booking";
-                scgMail.IsBodyHtml = true;
-                scgMail.Body = "Complete information on new client booking:<br><br>" +
-                    $"<b>Full Name:</b> {nameTxt.Text}<br><b>Contact Number:</b> {numTxt.Text}<br>" +
-                    $"<b>Booking Date:</b> {bookingDate.SelectedDate.ToLongDateString()}<br>" +
-                    $"<b>Estimated Number of People:</b> {headCountTxt.Text}<br><b>Estimated Cost:</b> ₱{preQuoteTxt.Text}";
-                clientTwo.EnableSsl = true;
-                clientTwo.Port = 587;
-                clientTwo.Credentials = new System.Net.NetworkCredential("kris.p.bacon2023@outlook.com", "SamplePassword123");
-                clientTwo.Send(scgMail);
+                    scgMail.Subject = "New Client Booking";
+                    scgMail.IsBodyHtml = true;
+                    scgMail.Body = "Complete information on new client booking:<br><br>" +
+                        $"<b>Full Name:</b> {nameTxt.Text}<br><b>Contact Number:</b> {numTxt.Text}<br>" +
+                        $"<b>Booking Date:</b> {bookingDate.SelectedDate.ToLongDateString()}<br>" +
+                        $"<b>Estimated Number of People:</b> {headCountTxt.Text}<br><b>Estimated Cost:</b> ₱{preQuoteTxt.Text}";
+                    clientTwo.EnableSsl = true;
+                    clientTwo.Port = 587;
+                    clientTwo.Credentials = new System.Net.NetworkCredential("kris.p.bacon2023@outlook.com", "SamplePassword123");
+                    clientTwo.Send(scgMail);
+                }
+                catch { }
             }
             else
             {
