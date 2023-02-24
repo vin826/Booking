@@ -23,7 +23,7 @@ namespace Booking
         protected void bookingBtn_Click(object sender, EventArgs e)
         {
             bookingValidate.Visible = false;
-            if (IsValidNum() && IsValidEmail() && IsValidDate() && IsValidPeople())
+            if (IsValidNum() && IsValidEmail() && IsValidDate())
             {
                 string connectString = "Server=tcp:myscgserver.database.windows.net,1433;Initial Catalog=bookingDB;Persist Security Info=False;User ID=Mugbearer;Password=Southcountry1234;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"; SqlConnection bookingConnect = new SqlConnection(connectString);
                 bookingConnect.Open();
@@ -167,25 +167,10 @@ namespace Booking
             return true;
         }
 
-        protected bool IsValidPeople()
-        {
-            int numOfPeople = Int32.Parse(headCountTxt.Text);
-            if (numOfPeople > 0)
-            {
-                peopleValidate.Visible = false;
-                return true;
-            }
-            peopleValidate.Visible = true;
-            return false;
-        }
-
         protected void headCountTxt_TextChanged(object sender, EventArgs e)
         {
-            if (Int32.Parse(headCountTxt.Text) > 0)
-            {
-                int preQuote = Int32.Parse(headCountTxt.Text) * 1000;
-                preQuoteTxt.Text = preQuote.ToString();
-            }
+            int preQuote = Int32.Parse(headCountTxt.Text) * 1000;
+            preQuoteTxt.Text = preQuote.ToString();
         }
     }
 }
