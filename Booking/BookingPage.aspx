@@ -81,7 +81,6 @@
                     <td>
                         <asp:TextBox ID="headCountTxt" runat="server" TextMode="Number" OnTextChanged="headCountTxt_TextChanged" MaxLength="5" min="1"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="headCountRequiredField" runat="server" ControlToValidate="headCountTxt" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-                        <asp:Label ID="peopleValidate" runat="server" Text="Invalid number" ForeColor="Red" Visible="False"></asp:Label>
                     </td>
                 </tr>
                 <tr>
