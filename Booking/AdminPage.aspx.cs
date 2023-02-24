@@ -10,6 +10,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Data.SqlClient;
+using System.ComponentModel;
 
 namespace Booking
 {
@@ -108,6 +109,7 @@ namespace Booking
 
         protected void bookBtn_Click(object sender, EventArgs e)
         {
+            bookingValidate.Visible = false;
             if (IsValidNum() && IsValidEmail() && IsValidDate())
             {
                 string connectString = "Server=tcp:myscgserver.database.windows.net,1433;Initial Catalog=bookingDB;Persist Security Info=False;User ID=Mugbearer;Password=Southcountry1234;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"; SqlConnection bookingConnect = new SqlConnection(connectString);
@@ -137,7 +139,14 @@ namespace Booking
 
                 cmdStr = $"INSERT INTO bookingTBL (bookingID, fullName, contactNum, email, date) VALUES ({randomID.ToString()},'{nameTxt.Text}','{numTxt.Text}','{emailTxt.Text}','{dateCal.SelectedDate.ToShortDateString()}');";
                 bookingCmd = new SqlCommand(cmdStr, bookingConnect);
-                bookingCmd.ExecuteNonQuery();
+                try
+                {
+                    bookingCmd.ExecuteNonQuery();
+                }
+                catch
+                {
+                    bookingValidate.Visible = true;
+                }
 
                 bookConfirm.Visible = true;
                 bookingConnect.Close();

@@ -141,6 +141,15 @@ namespace Booking
         protected global::System.Web.UI.WebControls.RequiredFieldValidator headCountRequiredField;
 
         /// <summary>
+        /// peopleValidate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label peopleValidate;
+
+        /// <summary>
         /// preQuoteLbl control.
         /// </summary>
         /// <remarks>
@@ -175,5 +184,14 @@ namespace Booking
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label bookingConfirm;
+
+        /// <summary>
+        /// bookingValidate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label bookingValidate;
     }
 }

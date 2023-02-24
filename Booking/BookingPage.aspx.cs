@@ -22,7 +22,8 @@ namespace Booking
 
         protected void bookingBtn_Click(object sender, EventArgs e)
         {
-            if (IsValidNum() && IsValidEmail() && IsValidDate())
+            bookingValidate.Visible = false;
+            if (IsValidNum() && IsValidEmail() && IsValidDate() && IsValidPeople())
             {
                 string connectString = "Server=tcp:myscgserver.database.windows.net,1433;Initial Catalog=bookingDB;Persist Security Info=False;User ID=Mugbearer;Password=Southcountry1234;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"; SqlConnection bookingConnect = new SqlConnection(connectString);
                 bookingConnect.Open();
@@ -33,7 +34,7 @@ namespace Booking
                 data.Load(bookingDR);
 
                 Random rnd = new Random();
-                int randomID = rnd.Next(100000, 10000000);
+                int randomID = rnd.Next(1000000, 10000000);
                 int[] existingID = new int[data.Rows.Count];
                 for (int i = 0; i < data.Rows.Count; i++)
                 {
@@ -43,7 +44,7 @@ namespace Booking
                 {
                     if (existingID.Contains(randomID))
                     {
-                        randomID = rnd.Next(100000, 10000000);
+                        randomID = rnd.Next(1000000, 10000000);
                         continue;
                     }
                     break;
@@ -51,7 +52,14 @@ namespace Booking
 
                 cmdStr = $"INSERT INTO bookingTBL(bookingID, fullName, contactNum, email, date) VALUES ({randomID.ToString()},'{nameTxt.Text}','{numTxt.Text}','{emailTxt.Text}','{bookingDate.SelectedDate.ToShortDateString()}');";
                 bookingCmd = new SqlCommand(cmdStr, bookingConnect);
-                bookingCmd.ExecuteNonQuery();
+                try
+                {
+                    bookingCmd.ExecuteNonQuery();
+                }
+                catch
+                {
+                    bookingValidate.Visible = true;
+                }
 
                 bookingConfirm.Visible = true;
                 bookingConnect.Close();
@@ -159,10 +167,25 @@ namespace Booking
             return true;
         }
 
+        protected bool IsValidPeople()
+        {
+            int numOfPeople = Int32.Parse(headCountTxt.Text);
+            if (numOfPeople > 0)
+            {
+                peopleValidate.Visible = false;
+                return true;
+            }
+            peopleValidate.Visible = true;
+            return false;
+        }
+
         protected void headCountTxt_TextChanged(object sender, EventArgs e)
         {
-            int preQuote = Int32.Parse(headCountTxt.Text) * 1000;
-            preQuoteTxt.Text = preQuote.ToString();
+            if (Int32.Parse(headCountTxt.Text) > 0)
+            {
+                int preQuote = Int32.Parse(headCountTxt.Text) * 1000;
+                preQuoteTxt.Text = preQuote.ToString();
+            }
         }
     }
 }

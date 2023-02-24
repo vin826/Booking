@@ -42,14 +42,14 @@
                 <tr>
                     <td class="auto-style13">Full Name:</td>
                     <td class="auto-style14">
-                        <asp:TextBox ID="nameTxt" runat="server" Width="232px"></asp:TextBox>
+                        <asp:TextBox ID="nameTxt" runat="server" Width="232px" MaxLength="40"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="nameRequiredField" runat="server" ControlToValidate="nameTxt" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style11">Contact Number:</td>
                     <td class="auto-style12">
-                        <asp:TextBox ID="numTxt" runat="server" Width="196px"></asp:TextBox>
+                        <asp:TextBox ID="numTxt" runat="server" Width="196px" MaxLength="11"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="nameRequiredField0" runat="server" ControlToValidate="numTxt" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                         <asp:Label ID="numValidate" runat="server" ForeColor="Red" Text="Must be a valid number" Visible="False"></asp:Label>
                     </td>
@@ -57,7 +57,7 @@
                 <tr>
                     <td class="auto-style9">Email Address:</td>
                     <td class="auto-style10">
-                        <asp:TextBox ID="emailTxt" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="emailTxt" runat="server" EnableTheming="True" MaxLength="40"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="nameRequiredField1" runat="server" ControlToValidate="emailTxt" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                         <asp:Label ID="emailValidate" runat="server" ForeColor="Red" Text="Must be a valid email address" Visible="False"></asp:Label>
                     </td>
@@ -79,8 +79,9 @@
                         <asp:Label ID="headCountLbl" runat="server" Text="Estimated Number of People:"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="headCountTxt" runat="server" TextMode="Number" OnTextChanged="headCountTxt_TextChanged"></asp:TextBox>
+                        <asp:TextBox ID="headCountTxt" runat="server" TextMode="Number" OnTextChanged="headCountTxt_TextChanged" MaxLength="5"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="headCountRequiredField" runat="server" ControlToValidate="headCountTxt" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:Label ID="peopleValidate" runat="server" Text="Invalid number" ForeColor="Red" Visible="False"></asp:Label>
                     </td>
                 </tr>
                 <tr>
@@ -97,6 +98,7 @@
                     <td>
                         <asp:Button ID="bookingBtn" runat="server" Text="Book" OnClick="bookingBtn_Click" />
                         <asp:Label ID="bookingConfirm" runat="server" Text="Booking Confirmed!" ForeColor="Green" Visible="False"></asp:Label>
+                        <asp:Label ID="bookingValidate" runat="server" Text="Booking Failed" ForeColor="Red" Visible="False"></asp:Label>
                     </td>
                 </tr>
             </table>

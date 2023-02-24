@@ -8,7 +8,7 @@
                 <asp:Label ID="userLbl" runat="server" Text="Username: "></asp:Label>
             </asp:TableCell>
             <asp:TableCell runat="server">
-                <asp:TextBox ID="userTxt" runat="server"></asp:TextBox>
+                <asp:TextBox ID="userTxt" runat="server" MaxLength="30"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="userRequiredField" runat="server" ControlToValidate="userTxt" ErrorMessage="*" ForeColor="Red" ValidationGroup="loginValGroup"></asp:RequiredFieldValidator>
                 <asp:Label ID="userValidate" runat="server" Text="Username does not exist" ForeColor="Red" Visible="False"></asp:Label>
             </asp:TableCell>
@@ -18,7 +18,7 @@
                 <asp:Label ID="passLbl" runat="server" Text="Password: "></asp:Label>
             </asp:TableCell>
             <asp:TableCell runat="server">
-                <asp:TextBox ID="passTxt" runat="server"></asp:TextBox>
+                <asp:TextBox ID="passTxt" TextMode="Password" runat="server" MaxLength="30"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="passRequiredField" runat="server" ControlToValidate="passTxt" ErrorMessage="*" ForeColor="Red" ValidationGroup="loginValGroup"></asp:RequiredFieldValidator>
                 <asp:Label ID="passValidate" runat="server" Text="Invalid password" ForeColor="Red" Visible="False"></asp:Label>
             </asp:TableCell>
@@ -51,7 +51,7 @@
                 <asp:Label ID="nameLbl" runat="server" Text="Full Name:"></asp:Label>
             </asp:TableCell>
             <asp:TableCell runat="server">
-                <asp:TextBox ID="nameTxt" runat="server"></asp:TextBox>
+                <asp:TextBox ID="nameTxt" runat="server" MaxLength="40"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="nameRequiredField" runat="server" ControlToValidate="nameTxt" ErrorMessage="*" ForeColor="Red" ValidationGroup="addValGroup"></asp:RequiredFieldValidator>
             </asp:TableCell>
         </asp:TableRow>
@@ -70,7 +70,7 @@
                 <asp:Label ID="emailLbl" runat="server" Text="Email Address:"></asp:Label>
             </asp:TableCell>
             <asp:TableCell runat="server">
-                <asp:TextBox ID="emailTxt" runat="server"></asp:TextBox>
+                <asp:TextBox ID="emailTxt" runat="server" MaxLength="40"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="emailRequiredField" runat="server" ControlToValidate="emailTxt" ErrorMessage="*" ForeColor="Red" ValidationGroup="addValGroup"></asp:RequiredFieldValidator>
                 <asp:Label ID="emailValidate" runat="server" ForeColor="Red" Text="Must be a valid email address" Visible="False"></asp:Label>
             </asp:TableCell>
@@ -90,6 +90,7 @@
             </asp:TableCell>
             <asp:TableCell runat="server">
                 <asp:Label ID="bookConfirm" runat="server" Text="Booking Confirmed!" Visible="False" ForeColor="Green"></asp:Label>
+                <asp:Label ID="bookingValidate" runat="server" Text="Booking Failed" ForeColor="Red" Visible="False"></asp:Label>
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>
@@ -99,7 +100,7 @@
                 <asp:Label ID="deleteLbl" runat="server" Text="Delete by Booking ID:"></asp:Label>
             </asp:TableCell>
             <asp:TableCell runat="server">
-                <asp:TextBox ID="deleteTxt" runat="server"></asp:TextBox>
+                <asp:TextBox ID="deleteTxt" runat="server" MaxLength="7"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="deleteRequiredField" runat="server" ForeColor="Red" ErrorMessage="*" ValidationGroup="deleteValGroup" ControlToValidate="deleteTxt"></asp:RequiredFieldValidator>
                 <asp:Label ID="deleteValidate" runat="server" Text="Booking ID does not exist" Visible="False" ForeColor="Red"></asp:Label>
             </asp:TableCell>
