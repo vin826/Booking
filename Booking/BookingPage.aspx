@@ -1,6 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="BookingPage.aspx.cs" Inherits="Booking.BookingPage" %>
+﻿<%@ Page Title="Booking Page" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="BookingPage.aspx.cs" Inherits="Booking.BookingPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title></title>
     <style type="text/css">
         .auto-style6 {
             height: 78px;
@@ -38,16 +37,19 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="margin-bottom: 15px">
         <div class="auto-style6">
-            Personal Info Input<table class="auto-style7">
+            Personal Info Input<table class="auto-style7" role="presentation">
                 <tr>
-                    <td class="auto-style13">Full Name:</td>
+                    <td class="auto-style13">
+                        <asp:Label ID="nameLbl" runat="server" Text="Full Name:" for="nameTxt"></asp:Label></td>
                     <td class="auto-style14">
                         <asp:TextBox ID="nameTxt" runat="server" Width="232px" MaxLength="40"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="nameRequiredField" runat="server" ControlToValidate="nameTxt" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style11">Contact Number:</td>
+                    <td class="auto-style11">
+                        <asp:Label ID="numLbl" runat="server" Text="Contact Number:" for="numTxt"></asp:Label>
+                    </td>
                     <td class="auto-style12">
                         <asp:TextBox ID="numTxt" runat="server" Width="196px" MaxLength="11"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="nameRequiredField0" runat="server" ControlToValidate="numTxt" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -55,7 +57,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style9">Email Address:</td>
+                    <td class="auto-style9">
+                        <asp:Label ID="emailLbl" runat="server" Text="Email Address:" for="emailTxt"></asp:Label>
+                    </td>
                     <td class="auto-style10">
                         <asp:TextBox ID="emailTxt" runat="server" EnableTheming="True" MaxLength="40"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="nameRequiredField1" runat="server" ControlToValidate="emailTxt" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -64,7 +68,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style8">
-                        <asp:Label ID="Label1" runat="server" Text="Booking Date:"></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Text="Booking Date:" for="bookingDate">></asp:Label>
                     </td>
                     <td>
                         <asp:Calendar ID="bookingDate" runat="server">
@@ -76,7 +80,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="headCountLbl" runat="server" Text="Estimated Number of People:"></asp:Label>
+                        <asp:Label ID="headCountLbl" runat="server" Text="Estimated Number of People:" for="headCountTxt"></asp:Label>
                     </td>
                     <td>
                         <asp:TextBox ID="headCountTxt" runat="server" TextMode="Number" OnTextChanged="headCountTxt_TextChanged" MaxLength="5" min="1"></asp:TextBox>
@@ -85,7 +89,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="preQuoteLbl" runat="server" Text="Estimated Cost:"></asp:Label>
+                        <asp:Label ID="preQuoteLbl" runat="server" Text="Estimated Cost:" for="preQuoteTxt"></asp:Label>
                     </td>
                     <td>
                         <asp:TextBox ID="preQuoteTxt" runat="server" TextMode="Number" Enabled="False"></asp:TextBox>

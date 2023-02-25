@@ -15,6 +15,15 @@ namespace Booking
     {
 
         /// <summary>
+        /// nameLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label nameLbl;
+
+        /// <summary>
         /// nameTxt control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace Booking
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator nameRequiredField;
+
+        /// <summary>
+        /// numLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label numLbl;
 
         /// <summary>
         /// numTxt control.
@@ -58,6 +76,15 @@ namespace Booking
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label numValidate;
+
+        /// <summary>
+        /// emailLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label emailLbl;
 
         /// <summary>
         /// emailTxt control.

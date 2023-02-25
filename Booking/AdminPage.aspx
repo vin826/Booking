@@ -1,11 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="AdminPage.aspx.cs" Inherits="Booking.AdminPage" %>
+﻿<%@ Page Title="AdminPage" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="AdminPage.aspx.cs" Inherits="Booking.AdminPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Table ID="loginTbl" runat="server">
+    <asp:Table ID="loginTbl" runat="server" role="presentation">
         <asp:TableRow runat="server">
             <asp:TableCell runat="server">
-                <asp:Label ID="userLbl" runat="server" Text="Username: "></asp:Label>
+                <asp:Label ID="userLbl" runat="server" Text="Username: " for="userTxt"></asp:Label>
             </asp:TableCell>
             <asp:TableCell runat="server">
                 <asp:TextBox ID="userTxt" runat="server" MaxLength="30"></asp:TextBox>
@@ -15,7 +15,7 @@
         </asp:TableRow>
         <asp:TableRow runat="server">
             <asp:TableCell runat="server">
-                <asp:Label ID="passLbl" runat="server" Text="Password: "></asp:Label>
+                <asp:Label ID="passLbl" runat="server" Text="Password: " for="passTxt"></asp:Label>
             </asp:TableCell>
             <asp:TableCell runat="server">
                 <asp:TextBox ID="passTxt" TextMode="Password" runat="server" MaxLength="30"></asp:TextBox>
@@ -29,7 +29,7 @@
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>
-    <asp:Table ID="controlTbl" runat="server" Visible="False">
+    <asp:Table ID="controlTbl" runat="server" role="presentation" Visible="False">
         <asp:TableRow runat="server">
             <asp:TableCell runat="server">
                 <asp:Button ID="viewBtn" runat="server" Text="View" OnClick="viewBtn_Click" />
@@ -45,10 +45,10 @@
         </asp:TableRow>
     </asp:Table>
     <asp:PlaceHolder ID="dataPH" runat="server" Visible="False"></asp:PlaceHolder>
-    <asp:Table ID="addTbl" runat="server" Visible="False">
+    <asp:Table ID="addTbl" runat="server" role="presentation" Visible="False">
         <asp:TableRow runat="server">
             <asp:TableCell runat="server">
-                <asp:Label ID="nameLbl" runat="server" Text="Full Name:"></asp:Label>
+                <asp:Label ID="nameLbl" runat="server" Text="Full Name:" for="nameTxt"></asp:Label>
             </asp:TableCell>
             <asp:TableCell runat="server">
                 <asp:TextBox ID="nameTxt" runat="server" MaxLength="40"></asp:TextBox>
@@ -57,7 +57,7 @@
         </asp:TableRow>
         <asp:TableRow runat="server">
             <asp:TableCell runat="server">
-                <asp:Label ID="numLbl" runat="server" Text="Contact Number:"></asp:Label>
+                <asp:Label ID="numLbl" runat="server" Text="Contact Number:" for="numTxt"></asp:Label>
             </asp:TableCell>
             <asp:TableCell runat="server">
                 <asp:TextBox ID="numTxt" runat="server" MaxLength="11"></asp:TextBox>
@@ -67,7 +67,7 @@
         </asp:TableRow>
         <asp:TableRow runat="server">
             <asp:TableCell runat="server">
-                <asp:Label ID="emailLbl" runat="server" Text="Email Address:"></asp:Label>
+                <asp:Label ID="emailLbl" runat="server" Text="Email Address:" for="emailTxt"></asp:Label>
             </asp:TableCell>
             <asp:TableCell runat="server">
                 <asp:TextBox ID="emailTxt" runat="server" MaxLength="40"></asp:TextBox>
@@ -77,7 +77,7 @@
         </asp:TableRow>
         <asp:TableRow runat="server">
             <asp:TableCell runat="server">
-                <asp:Label ID="dateLbl" runat="server" Text="Booking Date:"></asp:Label>
+                <asp:Label ID="dateLbl" runat="server" Text="Booking Date:" for="dateCal"></asp:Label>
             </asp:TableCell>
             <asp:TableCell runat="server">
                 <asp:Calendar ID="dateCal" runat="server"></asp:Calendar>
@@ -94,10 +94,10 @@
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>
-    <asp:Table ID="deleteTbl" runat="server" Visible="False">
+    <asp:Table ID="deleteTbl" runat="server" role="presentation" Visible="False">
         <asp:TableRow runat="server">
             <asp:TableCell runat="server">
-                <asp:Label ID="deleteLbl" runat="server" Text="Delete by Booking ID:"></asp:Label>
+                <asp:Label ID="deleteLbl" runat="server" Text="Delete by Booking ID:" for="deleteTxt"></asp:Label>
             </asp:TableCell>
             <asp:TableCell runat="server">
                 <asp:TextBox ID="deleteTxt" runat="server" MaxLength="7"></asp:TextBox>
