@@ -68,7 +68,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style8">
-                        <asp:Label ID="Label1" runat="server" Text="Booking Date:" for="bookingDate">></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Text="Booking Date:" for="bookingDate">Booking Date:</asp:Label>
                     </td>
                     <td>
                         <asp:Calendar ID="bookingDate" runat="server">
