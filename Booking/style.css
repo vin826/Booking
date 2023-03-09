@@ -1,0 +1,12 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+
+* {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: "Arial", sans-serif;
+}
+
+body {
+    color: rgb(72,72,127);
+}
